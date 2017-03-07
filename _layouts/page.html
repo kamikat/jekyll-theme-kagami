@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<article class="page" lang="{{ page.lang | default: site.lang | default: "en" }}" itemscope itemtype="http://schema.org/BlogPosting">
+  {{ content }}
+</article>

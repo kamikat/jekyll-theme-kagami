@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="post" lang="{{ page.lang | default: site.lang | default: "en" }}" itemscope itemtype="http://schema.org/BlogPosting" >
+
+  <header class="post-header">
+    <a class="site-title" href="{{ "/" | relative_url  }}">{{ site.title | escape  }}</a>
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape | replace: "​", "<wbr>" }}</h1>
+  </header>
+
+  {% if page.cover_url %}
+  <div class="post-cover" aria-label="Cover">
+    <div class="post-cover-wrapper">
+      <img src="{{ page.cover_url }}" alt="" />
+    </div>
+    <div class="cover-meta">{{ page.cover_meta | markdownify }}</div>
+  </div>
+  {% endif %}
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-meta">
+      {% if page.date %} <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time> {% endif %}
+      {% if page.author %} by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author | escape }}</span></span> {% endif %}
+    </div>
+
+    {% if page.tags.size > 0 %}
+    <ul class="post-tags" aria-label="TagList">
+      {% for tag in page.tags %}
+      <li><a class="tag-link" href="{{ tag | url_encode | prepend: "/posts/#tags=" | relative_url }}">{{ tag | escape }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </footer>
+
+  {% if jekyll.environment == 'production' and site.disqus_shortname and page.comments != false %}
+  {% include disqus.html %}
+  {% endif %}
+</article>

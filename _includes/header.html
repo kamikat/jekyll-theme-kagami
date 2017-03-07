@@ -1,0 +1,22 @@
+<header class="post-header">
+  <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <nav class="site-nav">
+    <div class="page-list">
+      {% assign sorted_pages = site.pages | sort: "position" %}
+      {% for my_page in sorted_pages %}
+      {% if my_page.title and my_page.url != "/" %}
+      <a class="page-link" href="{{ my_page.url | relative_url }}" >{{ my_page.name | downcase | remove: ".md" | escape }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </nav>
+</header>
+
+{% if page.cover_url %}
+<div class="post-cover" aria-label="Cover">
+  <div class="post-cover-wrapper">
+    <img src="{{ page.cover_url }}" alt="" />
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% include header.html %}
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-list-item" data-tags="{{ post.tags | join: " " }}">
+    <a class="post-item-link" href="{{ post.url | relative_url }}" data-date="{{ post.date | date: "%m-%d"  }}">
+      {{ post.title | escape }}
+    </a>
+    {% if post.description %}
+    <p class="post-description">{{ post.description }}</p>
+    {% endif %}
+    <div class="post-item-meta">
+      {{ post.date | date: "%B %-d, %Y" }}
+      /
+      {% capture lang %}{{ post.lang | default: site.lang | default: "en" }}{% endcapture %}
+      {% if lang == "en" %}
+      {% capture words %}{{ post.content | strip_html | number_of_words  }}{% endcapture %}
+      {% else %}
+      {% capture words %}{{ post.content | strip_html | size }}{% endcapture %}
+      {% endif %}
+      {% unless words contains "-" %}
+      {{ words | plus: 250 | divided_by: 250 | append: " minute read"  }}
+      {% endunless %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<script type="text/javascript">
+  var argparse = /([^=]+)=(.*)+/;
+  var h = window.location.hash, h = h && h.substr(1).split('&') || [], filters = {};
+  h.forEach(function (e) { var p = argparse.exec(e); if (p) filters[decodeURIComponent(p[1])] = decodeURIComponent(p[2]) });
+  if (filters.tags) document.querySelectorAll('.post-list li').forEach(function (e) {
+    e.style.display = !!~e.dataset.tags.indexOf(filters.tags) ? '' : 'none'
+  });
+</script>
