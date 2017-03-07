@@ -31,9 +31,9 @@ Or install it yourself as:
 You can customize social account links by adding following lines to `_config.yml`
 
 ```yaml
-github_username: kamikat
-twitter_username: kamikat_bot
-instagram_username: kamikat_bot
+github_username: my_github_username
+twitter_username: my_twitter_username
+instagram_username: my_instagram_username
 ```
 
 You can customize footer by overriding `_includes/footer.html`.
