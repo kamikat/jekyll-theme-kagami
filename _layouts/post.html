@@ -30,7 +30,7 @@ layout: default
     {% if page.tags.size > 0 %}
     <ul class="post-tags" aria-label="TagList">
       {% for tag in page.tags %}
-      <li><a class="tag-link" href="{{ tag | url_encode | prepend: "/posts/#tags=" | relative_url }}">{{ tag | escape }}</a></li>
+      <li><a class="tag-link" href="{{ tag | url_encode | prepend: "/#tags=" | relative_url }}">{{ tag | escape }}</a></li>
       {% endfor %}
     </ul>
     {% endif %}
