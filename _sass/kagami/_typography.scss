@@ -26,11 +26,6 @@ h3 { font-weight: bold; font-size: 1.2em; }
 h4 { font-weight: bold; }
 h5 { font-weight: bold; }
 
-// fix vertical baseline
-h1 { margin-left: -1px; }
-h2 { margin-left: -2px; }
-h3 { margin-left: -2px; }
-
 article {
 
   h2, h3, h4, h5, h6 {
@@ -125,7 +120,6 @@ article {
   font-variant-caps: all-petite-caps;
   font-size: 0.875em;
   @include font-serif;
-  margin-left: 4px;
   border-bottom: none;
   white-space: nowrap;
 }
@@ -208,7 +202,6 @@ article {
 
 .post-item-link {
   font-size: 1.4em;
-  margin-left: -2px;
 }
 
 .post-description {
@@ -226,3 +219,17 @@ article {
   font-size: 0.4em;
   color: #fff;
 }
+
+.site-title, .site-title:visited, .site-title:hover {
+  margin-left: 3px;
+}
+
+[lang^="zh"] {
+  .post-item-link {
+    margin-left: -2px;
+  }
+  h1 { margin-left: -1px; }
+  h2 { margin-left: -2px; }
+  h3 { margin-left: -2px; }
+}
+
