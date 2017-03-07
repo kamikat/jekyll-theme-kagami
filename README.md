@@ -1,5 +1,7 @@
 # Kagami
 
+[![Build Status](https://travis-ci.org/kamikat/jekyll-theme-kagami.svg?branch=master)](https://travis-ci.org/kamikat/jekyll-theme-kagami)
+
 A peaceful theme for Jekyll and GitHub Pages.
 
 ## Installation
