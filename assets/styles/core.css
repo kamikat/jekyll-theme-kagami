@@ -125,8 +125,7 @@ body {
 
 article h1, article h2, article h3, article h4, article h5, article h6, article p, article ul, article ol, article pre, article hr, article blockquote, article img:only-child {
   display: block;
-  margin-top: 32px;
-  margin-bottom: 32px; }
+  margin: 32px auto; }
 article li > ul, article li > ol {
   margin-top: 0;
   margin-bottom: 0; }
