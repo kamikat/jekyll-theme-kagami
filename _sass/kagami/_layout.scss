@@ -33,8 +33,7 @@ article {
 
   h1, h2, h3, h4, h5, h6, p, ul, ol, pre, hr, blockquote, img:only-child {
     display: block;
-    margin-top: $vspacing;
-    margin-bottom: $vspacing;
+    margin: $vspacing auto;
   }
 
   li > ul, li > ol {
