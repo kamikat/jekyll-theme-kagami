@@ -5,6 +5,8 @@
 
 A peaceful theme for Jekyll and GitHub Pages.
 
+![Screenshot](https://s2.banana.moe/docs/kagami-preview@2x.png)
+
 ## Installation
 
 Add this line to your Jekyll site's Gemfile:
@@ -29,7 +31,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Social Accounts
+### Social account links
 
 You can customize social account links by adding following lines to `_config.yml`
 
@@ -41,7 +43,7 @@ instagram_username: my_instagram_username
 
 You can customize footer by overriding `_includes/footer.html`.
 
-### Syntax Highlighting
+### Syntax highlighting
 
 Kagami support color schemes from [jekyll-pygments-themes](https://github.com/jwarby/jekyll-pygments-themes).
 
@@ -76,6 +78,34 @@ google_analytics: UA-NNNNNNNN-N
 ```
 
 Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
+
+### Enabling MathJax
+
+You can use MathJax with Kramdown's [built-in support](https://kramdown.gettalong.org/syntax.html#math-blocks).
+
+To enable [MathJax](https://www.mathjax.org/), add following lines to your site
+or post's front matter stuff:
+
+```yaml
+mathjax: true
+```
+
+### Use `.sidenote` and `.retina2x`
+
+Taking advantages of [Block/span IAL](https://kramdown.gettalong.org/syntax.html#block-ials),
+Kagami supports extra elements in writing.
+
+Add a `{:.sidenote}` after a paragraph (in a new line just after paragraph)
+will style the paragraph as a sidenote. Sidenote will be pull to the left of
+the page and only be visible in desktop mode.
+
+Kagami supports image optimized for retina display:
+
+```markdown
+![image@2x](path-to-image@2x.png){:.retina2x}
+```
+
+And the retina image will be scaled to half of it's original size in pixels.
 
 ## Contributing
 
