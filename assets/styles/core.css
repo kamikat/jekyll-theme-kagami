@@ -193,27 +193,25 @@ article h1 + *, article h1 + .aside + *, article h1 + .sidenote + *, article h2 
   margin-right: 0.25em; }
 
 .site-footer {
-  margin-top: 96px;
-  margin-bottom: 32px;
-  vertical-align: middle;
-  text-align: justify;
-  -moz-text-align-last: center;
-  text-align-last: center; }
+  padding-top: 32px;
+  padding-bottom: 32px; }
 
-.site-footer .wrapper::after {
-  display: inline-block;
-  content: '';
-  width: 100%; }
+.site-footer .wrapper {
+  display: flex;
+  width: 100%;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  align-items: center; }
 
 .social-links {
-  display: inline-block;
   text-align: center;
   margin: 1em -16px;
-  padding: 0 0.3em; }
+  padding: 0 0.3em;
+  white-space: nowrap; }
 
 .credits {
   margin-left: -0.256em;
-  display: inline-block; }
+  white-space: nowrap; }
 
 .post-list-item {
   margin-top: 32px;
@@ -307,8 +305,6 @@ article strong {
   font-weight: bold; }
 article a, article a:hover, article a:visited {
   border-bottom: 1px dotted currentColor; }
-article img.half-size, article img.retina2x {
-  zoom: 0.5; }
 article ul,
 article ol {
   padding-left: 2.0em; }
@@ -357,9 +353,7 @@ article hr {
   white-space: nowrap; }
 
 .site-nav {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Kagami Emoji";
-  font-size: 0.875em;
-  margin-top: 4px; }
+  font-size: 0.875em; }
 
 .post-title {
   word-break: keep-all;

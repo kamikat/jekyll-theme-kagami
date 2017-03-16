@@ -130,14 +130,26 @@
 </script>
 
     </div>
+    <script type="text/javascript">
+  (function () {
+    var resize = function () {
+      this.width = 0.5 * (this.naturalWidth || this.width);
+    }
+    Array.prototype.forEach.call(document.querySelectorAll(".half-size, .retina2x"), function(el) {
+      if (el.naturalWidth) {
+        resize.call(el);
+      } else {
+        el.onload = resize;
+      }
+    });
+  })();
+</script>
+
   </main>
 
   <footer class="site-footer">
 
   <div class="wrapper">
-    <div class="credits">
-      KAGAMI, made with <i class="icon-heart"></i> by Kamikat
-    </div>
     <div class="social-links">
       <a class="social-link social-github" href="https://github.com/kamikat">
         <i class="icon-github"></i>
@@ -151,6 +163,9 @@
       <a class="social-link social-rss" href="/jekyll-theme-kagami/feed.xml" target="_blank">
         <i class="icon-rss"></i>
       </a>
+    </div>
+    <div class="credits">
+      KAGAMI, made with <i class="icon-heart"></i> by Kamikat
     </div>
   </div>
 
