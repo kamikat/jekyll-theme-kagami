@@ -125,9 +125,7 @@ article {
 }
 
 .site-nav {
-  @include font-sans;
   font-size: 0.875em;
-  margin-top: $spacing-unit / 8;
 }
 
 .post-title {
