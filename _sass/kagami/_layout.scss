@@ -117,30 +117,28 @@ article {
 }
 
 .site-footer {
-  margin-top: $post-footer-spacing;
-  margin-bottom: $spacing-unit;
-  vertical-align: middle;
-  text-align: justify;
-  -moz-text-align-last: center;
-  text-align-last: center;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
 }
 
-.site-footer .wrapper::after {
-  display: inline-block;
-  content: '';
+.site-footer .wrapper {
+  display: flex;
   width: 100%;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .social-links {
-  display: inline-block;
   text-align: center;
   margin: 1em (-$content-padding);
   padding: 0 0.3em;
+  white-space: nowrap;
 }
 
 .credits {
   margin-left: -0.256em;
-  display: inline-block;
+  white-space: nowrap;
 }
 
 .post-list-item {
