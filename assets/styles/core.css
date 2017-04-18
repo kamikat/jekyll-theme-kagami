@@ -175,6 +175,10 @@ article .aside, article .sidenote {
     color: transparent; }
   article .aside, article .sidenote {
     display: none; } }
+@media screen and (min-width: 680px) {
+  article .hero-unit {
+    margin-left: -64px;
+    margin-right: -64px; } }
 article h1 + *, article h1 + .aside + *, article h1 + .sidenote + *, article h2 + *, article h2 + .aside + *, article h2 + .sidenote + *, article h3 + *, article h3 + .aside + *, article h3 + .sidenote + *, article h4 + *, article h4 + .aside + *, article h4 + .sidenote + *, article h5 + *, article h5 + .aside + *, article h5 + .sidenote + *, article h6 + *, article h6 + .aside + *, article h6 + .sidenote + * {
   margin-top: -8px; }
 
@@ -263,7 +267,7 @@ h1, h2, h3, h4, h5, h6, p {
   display: block; }
 
 h1 {
-  font-size: 2.0em; }
+  font-size: 1.8em; }
 
 h2 {
   font-weight: bold;
