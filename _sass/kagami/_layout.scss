@@ -90,6 +90,13 @@ article {
     }
   }
 
+  @media screen and (min-width: $content-width) {
+    .hero-unit {
+      margin-left: -$post-margin-width;
+      margin-right: -$post-margin-width;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 { // reduce spacing after headings
     & + *,
     & + .aside + *,
