@@ -84,20 +84,18 @@ Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
 Layout file `post-list` supports filters by tag or category. Create pages with following frontmatter will generate a filtered post list.
 
 ```yaml
-title: "Title of Tag Page"
+title: Title of Tag Page
 layout: post-list
 filter:
-  - by_tag: "Tagname"
+  - by_tag: tagname
 ```
 
 To filter by both category and tags:
 
 ```yaml
-title: "Title of Tag Page"
-layout: post-list
 filter:
-  - by_tag: "tagname"
-    by_category: "category"
+  - by_tag: tagname
+    by_category: category
 ```
 
 Results from multiple filters are combined (logical 'or') into the result.
