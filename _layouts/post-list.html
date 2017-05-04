@@ -5,7 +5,24 @@ layout: default
 {% include header.html %}
 
 <ul class="post-list">
-  {% for post in site.posts %}
+  {% for rule in page.filter %}
+  {% assign posts = site.posts %}
+  {% if rule.by_tag %}
+  {% assign posts = posts | where_exp: "post", "post.tags contains rule.by_tag" %}
+  {% endif %}
+  {% if rule.by_category %}
+  {% assign posts = posts | where_exp: "post", "post.category == rule.by_category" %}
+  {% endif %}
+  {% if rule.by_expression %}
+  {% assign posts = posts | where_exp: "post", rule.by_expression %}
+  {% endif %}
+  {% for post in posts %}
+  {% assign posts = posts | append: " " | append: post.path %}
+  {% endfor %}
+  {% endfor %}
+  {% assign posts = posts | split: " " | sort | uniq %}
+  {% assign posts = site.posts | where_exp: "post", "posts contains post.path" %}
+  {% for post in posts %}
   <li class="post-list-item" data-tags="{{ post.tags | join: " " }}">
     <a class="post-item-link" href="{{ post.url | relative_url }}" data-date="{{ post.date | date: "%m-%d"  }}">
       {{ post.title | escape }}
@@ -29,12 +46,3 @@ layout: default
   </li>
   {% endfor %}
 </ul>
-
-<script type="text/javascript">
-  var argparse = /([^=]+)=(.*)+/;
-  var h = window.location.hash, h = h && h.substr(1).split('&') || [], filters = {};
-  h.forEach(function (e) { var p = argparse.exec(e); if (p) filters[decodeURIComponent(p[1])] = decodeURIComponent(p[2]) });
-  if (filters.tags) document.querySelectorAll('.post-list li').forEach(function (e) {
-    e.style.display = !!~e.dataset.tags.indexOf(filters.tags) ? '' : 'none'
-  });
-</script>
