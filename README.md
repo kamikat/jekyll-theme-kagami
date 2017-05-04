@@ -79,6 +79,31 @@ google_analytics: UA-NNNNNNNN-N
 
 Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
 
+### Tags and category
+
+Layout file `post-list` supports filters by tag or category. Create pages with following frontmatter will generate a filtered post list.
+
+```yaml
+title: "Title of Tag Page"
+layout: post-list
+filter:
+  - by_tag: "Tagname"
+```
+
+To filter by both category and tags:
+
+```yaml
+title: "Title of Tag Page"
+layout: post-list
+filter:
+  - by_tag: "tagname"
+    by_category: "category"
+```
+
+Results from multiple filters are combined (logical 'or') into the result.
+
+A more flexible filter strategy is supported by supplying liquid expression to `by_expression` parameter in which post object can be referenced by the name `post`.
+
 ### Enabling MathJax
 
 You can use MathJax with Kramdown's [built-in support](https://kramdown.gettalong.org/syntax.html#math-blocks).
