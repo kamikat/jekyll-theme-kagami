@@ -3,11 +3,9 @@
   <h1 class="post-title">{{ page.title }}</h1>
   <nav class="site-nav">
     <div class="page-list">
-      {% assign sorted_pages = site.pages | sort: "position" %}
+      {% assign sorted_pages = site.pages | where_exp: "page", "page.navlevel == 'header'" | sort: "position" %}
       {% for my_page in sorted_pages %}
-      {% if my_page.title and my_page.url != "/" %}
-      <a class="page-link" href="{{ my_page.url | relative_url }}" >{{ my_page.name | downcase | remove: ".md" | escape }}</a>
-      {% endif %}
+      <a class="page-link" href="{{ my_page.url | relative_url }}" >{{ my_page.navtitle | default: my_page.title | escape }}</a>
       {% endfor %}
     </div>
   </nav>
