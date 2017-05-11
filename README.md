@@ -29,6 +29,19 @@ Or install it yourself as:
 
     $ gem install jekyll-theme-kagami
 
+### GitHub Pages
+
+Jekyll build is integrated with GitHub Pages with limited function. This section is intended for those who
+want to use the theme with GitHub Pages hosted sites.
+
+1. Download latest gem file from https://rubygems.org/gems/jekyll-theme-kagami
+2. Run `gem unpack [path-to-downloaded-gem-file] --target=.` on jekyll site project folder
+3. Delete the line `theme: ...` in `_config.yml`
+
+Zip archive downloaded from release page may not work because GitHub does not pack necessary files from submodules.
+
+Instruction 1 and 2 can also work when you decide to upgrade your installation.
+
 ## Usage
 
 ### Social account links
