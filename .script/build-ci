@@ -2,7 +2,7 @@
 
 set -e
 
-script/build
+.script/build
 
 if test -e "./_site/index.html";then
   echo "It builds!"
