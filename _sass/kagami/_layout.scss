@@ -73,7 +73,7 @@ article {
     }
   }
 
-  .aside, .sidenote {
+  .aside, .sidenote, .side-note {
     width: 160px;
     float: left;
     margin-left: -$post-margin-width;
@@ -85,7 +85,7 @@ article {
     h2, h3, h4, h5, h6 {
       &::before { color: rgba(0,0,0,0); }
     }
-    .aside, .sidenote {
+    .aside, .sidenote, .side-note {
       display: none;
     }
   }
