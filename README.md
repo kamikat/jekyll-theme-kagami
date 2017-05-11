@@ -128,16 +128,16 @@ or post's front matter stuff:
 mathjax: true
 ```
 
-### Use `.sidenote` and `.retina2x`
+### Use `.side-note` and `.retina2x`
 
 Taking advantages of [Block/span IAL](https://kramdown.gettalong.org/syntax.html#block-ials),
 Kagami supports extra elements in writing.
 
-Add a `{:.sidenote}` after a paragraph (in a new line just after paragraph)
+Add `{:.side-note}` notation after a paragraph (in a new line just after paragraph WITHOUT extra line breaks)
 will style the paragraph as a sidenote. Sidenote will be pull to the left of
 the page and only be visible in desktop mode.
 
-Kagami supports image optimized for retina display:
+Kagami is also optimized for high-res image display:
 
 ```markdown
 ![image@2x](path-to-image@2x.png){:.retina2x}
