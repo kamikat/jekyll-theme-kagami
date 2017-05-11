@@ -1,0 +1,6 @@
+[submodule "styles/highlighting"]
+	path = assets/styles/highlighting
+	url = https://github.com/jwarby/jekyll-pygments-themes
+[submodule "_sass/scut"]
+	path = _sass/scut
+	url = https://github.com/davidtheclark/scut
