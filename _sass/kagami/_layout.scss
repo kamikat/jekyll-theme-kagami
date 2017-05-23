@@ -119,8 +119,25 @@ article {
   margin-bottom: $post-footer-spacing;
 }
 
+.site-nav {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  justify-content: center;
+  margin-left: -$post-margin-width;
+  margin-right: -$post-margin-width;
+}
+
+@media screen and (min-width: $content-width) {
+  .site-nav {
+    height: 0;
+    justify-content: flex-end;
+  }
+}
+
 .page-link {
-  margin-right: 0.25em;
+  display: block;
+  padding: 0.5em;
 }
 
 .site-footer {

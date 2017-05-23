@@ -1,21 +1,10 @@
 ---
 layout: default
 ---
+
 <article class="post" lang="{{ page.lang | default: site.lang | default: "en" }}" itemscope itemtype="http://schema.org/BlogPosting" >
 
-  <header class="post-header">
-    <a class="site-title" href="{{ "/" | relative_url  }}">{{ site.title | escape  }}</a>
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape | replace: "​", "<wbr>" }}</h1>
-  </header>
-
-  {% if page.cover_url %}
-  <div class="post-cover" aria-label="Cover">
-    <div class="post-cover-wrapper">
-      <img src="{{ page.cover_url }}" alt="" />
-    </div>
-    <div class="cover-meta">{{ page.cover_meta | markdownify }}</div>
-  </div>
-  {% endif %}
+  {% include header.html %}
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}

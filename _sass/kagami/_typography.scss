@@ -8,6 +8,7 @@ body {
   font-size: font-size();
   font-weight: 300;
   font-kerning: normal;
+  border-top: 2px solid currentColor;
 }
 
 a, a:hover, a:visited {
@@ -126,6 +127,19 @@ article {
 
 .site-nav {
   font-size: 0.875em;
+  font-variant-caps: all-petite-caps;
+  letter-spacing: 0.12em;
+}
+
+.page-link {
+  transition: color 0.2s ease-in;
+}
+
+.site-nav:hover {
+  color: lighten($content-color, 50%);
+  .page-link:hover {
+    color: $content-color;
+  }
 }
 
 .post-title {

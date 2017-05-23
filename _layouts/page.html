@@ -2,8 +2,9 @@
 layout: default
 ---
 
-{% include header.html %}
+{% include site-nav.html %}
 
 <article class="page" lang="{{ page.lang | default: site.lang | default: "en" }}" itemscope itemtype="http://schema.org/BlogPosting">
+  {% include header.html %}
   {{ content }}
 </article>
