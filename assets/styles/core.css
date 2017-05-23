@@ -193,8 +193,21 @@ article h1 + *, article h1 + .aside + *, article h1 + .sidenote + *, article h2 
   margin-top: 96px;
   margin-bottom: 96px; }
 
+.site-nav {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: top;
+  justify-content: center;
+  margin-left: -64px;
+  margin-right: -64px; }
+
+@media screen and (min-width: 680px) {
+  .site-nav {
+    height: 0;
+    justify-content: flex-end; } }
 .page-link {
-  margin-right: 0.25em; }
+  display: block;
+  padding: 0.5em; }
 
 .site-footer {
   padding-top: 32px;
@@ -254,7 +267,8 @@ body {
   color: #3c3c3c;
   font-size: 18px;
   font-weight: 300;
-  font-kerning: normal; }
+  font-kerning: normal;
+  border-top: 2px solid currentColor; }
 
 a, a:hover, a:visited {
   text-decoration: none;
@@ -357,7 +371,17 @@ article hr {
   white-space: nowrap; }
 
 .site-nav {
-  font-size: 0.875em; }
+  font-size: 0.875em;
+  font-variant-caps: all-petite-caps;
+  letter-spacing: 0.12em; }
+
+.page-link {
+  transition: color 0.2s ease-in; }
+
+.site-nav:hover {
+  color: #bcbcbc; }
+  .site-nav:hover .page-link:hover {
+    color: #3c3c3c; }
 
 .post-title {
   word-break: keep-all;
