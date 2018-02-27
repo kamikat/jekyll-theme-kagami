@@ -245,3 +245,12 @@ article {
   h3 { margin-left: -2px; }
 }
 
+.baseline-fix {
+  visibility: hidden;
+}
+
+.baseline-fix-block {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0.95em;
+}

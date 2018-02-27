@@ -30,7 +30,7 @@ layout: default
   {% endif %}
   {% for post in posts %}
   <li class="post-list-item" data-tags="{{ post.tags | join: " " }}">
-    <a class="post-item-link" href="{{ post.url | relative_url }}" data-date="{{ post.date | date: "%m-%d"  }}">
+    <a class="post-item-link baseline-fix" href="{{ post.url | relative_url }}" data-date="{{ post.date | date: "%m-%d"  }}">
       {{ post.title | escape }}
     </a>
     {% if post.description %}
