@@ -172,7 +172,7 @@ article .aside, article .sidenote, article .side-note {
   padding: 0; }
 @media screen and (max-width: 680px) {
   article h2::before, article h3::before, article h4::before, article h5::before, article h6::before {
-    color: transparent; }
+    color: rgba(0, 0, 0, 0); }
   article .aside, article .sidenote, article .side-note {
     display: none; } }
 @media screen and (min-width: 680px) {
@@ -231,8 +231,22 @@ article h1 + *, article h1 + .aside + *, article h1 + .sidenote + *, article h2 
   white-space: nowrap; }
 
 .post-list-item {
+  position: relative;
   margin-top: 32px;
   margin-bottom: 32px; }
+
+.post-item-cover {
+  width: 100vw;
+  position: absolute;
+  top: -16px;
+  bottom: -16px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-size: cover;
+  background-position: center; }
+
+.post-item-label {
+  position: relative; }
 
 .post-description {
   margin-top: 10px;
@@ -468,6 +482,14 @@ article hr {
   font-variant-caps: all-petite-caps;
   color: #a2a2a2; }
 
+.post-list-item .post-item-cover {
+  opacity: 0.03;
+  transition: opacity 0.5s ease-out; }
+
+.post-list-item:hover .post-item-cover {
+  opacity: 0.15;
+  transition: opacity 0.5s ease-out; }
+
 .cover-meta {
   font-family: "Press Start 2P", cursive;
   font-variant-caps: all-petite-caps;
@@ -485,3 +507,11 @@ article hr {
   margin-left: -2px; }
 [lang^="zh"] h3 {
   margin-left: -2px; }
+
+.baseline-fix {
+  visibility: hidden; }
+
+.baseline-fix-block {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0.95em; }

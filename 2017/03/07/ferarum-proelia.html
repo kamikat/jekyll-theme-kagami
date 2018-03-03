@@ -9,9 +9,9 @@
   <meta name="description" content="Lorem markdownum lumina qua versus temeraria fecerat. Modo iuvenali nubila. Ensis erat multorum, in eadem violentia nodo primum, leges dixere corporibus sile...">
 
   
-  <link rel="stylesheet" href="/jekyll-theme-kagami/assets/styles/core.css?v=20170523185358">
-  <link rel="stylesheet" href="/jekyll-theme-kagami/assets/styles/fontello.css?v=20170523185358">
-  <link rel="stylesheet" href="/jekyll-theme-kagami/assets/styles/highlighting/github.css?v=20170523185358">
+  <link rel="stylesheet" href="/jekyll-theme-kagami/assets/styles/core.css?v=20180304062821">
+  <link rel="stylesheet" href="/jekyll-theme-kagami/assets/styles/fontello.css?v=20180304062821">
+  <link rel="stylesheet" href="/jekyll-theme-kagami/assets/styles/highlighting/github.css?v=20180304062821">
 
   <link rel="canonical" href="/jekyll-theme-kagami/2017/03/07/ferarum-proelia.html">
   <link rel="alternate" type="application/rss+xml" title="My Awesome Blog" href="/jekyll-theme-kagami/feed.xml">
@@ -29,7 +29,7 @@
 
   <header class="post-header">
   <a class="site-title" href="/jekyll-theme-kagami/">My Awesome Blog</a>
-  <h1 class="post-title" itemprop="name headline">Ferarum Proelia</h1>
+  <h1 class="post-title baseline-fix" itemprop="name headline">Ferarum Proelia</h1>
 </header>
 
 
@@ -144,6 +144,20 @@ arida lumina et capillis Proetum ferarum scelerum ieiunia sentit.</p>
   </div>
 
 </footer>
+
+
+  <script>
+  (function(elements) {
+    var elements = Array.prototype.slice.call(document.getElementsByClassName('baseline-fix'));
+    for (var i = 0; i != elements.length; i++) {
+      var el = elements[i];
+      el.innerHTML = el.innerHTML.replace(/[\u2000-\u206e⸀-\u2e7e⺀-\u2efe⼀-\u2fde⿰-\u2ffe\u3000-〾\u3040-ゞ゠-ヾ\u3100-\u312e\u3130-ㆎ㆐-㆞ㆠ-\u31be㇀-\u31eeㇰ-ㇾ㈀-㋾㌀-㏾㐀-\u4dbe一-\u9ffe\ua960-\ua97e가-\ud7ae\ud7b0-\ud7fe豈-\ufafe︰-﹎\uff00-￮]|[\ud840-\ud868\ud86a-\ud86c][\udc00-\udfff]|\ud82c[\udc00-\udcfe]|\ud869[\udc00-\udede\udf00-\udfff]|\ud86d[\udc00-\udf3e\udf40-\udfff]|\ud86e[\udc00-\udc1e]|\ud87e[\udc00-\ude1e]/g, function (ch) {
+        return '<span class="baseline-fix-block">' + ch + '<' + '/span>';
+      });
+      el.classList.remove('baseline-fix');
+    }
+  })(Array.prototype.slice.call(document.getElementsByClassName('baseline-fix')));
+</script>
 
 
 </body>
