@@ -225,6 +225,16 @@ article {
   color: lighten($content-color, 40%);
 }
 
+.post-list-item .post-item-cover {
+  opacity: 0.03;
+  transition: opacity 0.5s ease-out;
+}
+
+.post-list-item:hover .post-item-cover {
+  opacity: 0.15;
+  transition: opacity 0.5s ease-out;
+}
+
 .cover-meta {
   font-family: "Press Start 2P", cursive;
   font-variant-caps: all-petite-caps;

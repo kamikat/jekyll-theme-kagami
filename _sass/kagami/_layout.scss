@@ -166,8 +166,24 @@ article {
 }
 
 .post-list-item {
+  position: relative;
   margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
+}
+
+.post-item-cover {
+  width: 100vw;
+  position: absolute;
+  top: -.5 * $spacing-unit;
+  bottom: -.5 * $spacing-unit;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-size: cover;
+  background-position: center;
+}
+
+.post-item-label {
+  position: relative;
 }
 
 .post-description {
