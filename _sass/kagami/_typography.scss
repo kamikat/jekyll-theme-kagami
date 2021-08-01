@@ -210,6 +210,26 @@ article {
   @include scut-list-unstyled;
 }
 
+.post-list-delimiter {
+  height: 4em;
+}
+
+.post-list-group-header {
+  a {
+    font-size: 0.85em;
+    opacity: 0.6;
+    transition: opacity 0.5s ease-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  a:hover {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+}
+
 .post-item-link {
   font-size: 1.4em;
 }
