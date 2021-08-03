@@ -25,7 +25,12 @@ layout: default
     {% endif %}
   </footer>
 
-  {% if jekyll.environment == 'production' and site.disqus_shortname and page.comments != false %}
+  {% if jekyll.environment == 'production' and page.comments != false %}
+  {% if site.disqus_shortname %}
   {% include disqus.html %}
+  {% elsif site.gitalk %}
   {% endif %}
+  {% include gitalk.html %}
+  {% endif %}
+
 </article>

@@ -1,0 +1,14 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    mermaid.init({ startOnLoad: true }, "pre code.language-mermaid", function () {
+      const codeBlock = document.querySelector('code.language-mermaid');
+      codeBlock.style.backgroundColor = 'initial';
+
+      const preBlock = codeBlock.parentNode;
+      preBlock.style.border = 'none';
+      preBlock.style.textAlign = 'center';
+      preBlock.style.backgroundColor = 'initial';
+    });
+  })();
+</script>
