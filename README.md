@@ -94,14 +94,13 @@ Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
 
 ### Navigation
 
-Pages and posts can be listed as navigation item in header of pages. Add following frontmatter will make it
+Pages and posts can be registered as navigation item with following frontmatter:
 
 ```yaml
-navlevel: header
-navtitle: Awesome Title # optional, specifies the text to display on navigation item
+navbar_title: Awesome Title # specifies the text to display as navigation item
 ```
 
-Navigation items are ordered in alphabetical order by default in Jekyll. While you can adjust the order manually using
+Navigation items are ordered in alphabetical order by default in Jekyll. Adjust the order manually with a `position` value:
 
 ```yaml
 position: 999
@@ -109,7 +108,7 @@ position: 999
 
 ### Tags and category
 
-Layout file `post-list` supports filters by tag or category. Create pages with following frontmatter will generate a filtered post list.
+Layout file `post-list` supports filtering by tag or category. Create pages with following frontmatter will generate a filtered post list.
 
 ```yaml
 title: Title of Tag Page

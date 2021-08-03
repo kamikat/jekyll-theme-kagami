@@ -1,8 +1,7 @@
 ---
 layout: page
 title: Variables
-navlevel: header
-navtitle: variables
+navbar_title: variables
 ---
 
 This page previews variables in Jekyll with `jsonify` filter.

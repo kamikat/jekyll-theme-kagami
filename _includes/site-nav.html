@@ -1,6 +1,8 @@
 <nav class="site-nav">
-  {% assign sorted_pages = site.pages | where_exp: "page", "page.navlevel == 'header'" | sort: "position" %}
-  {% for my_page in sorted_pages %}
-  <a class="page-link" href="{{ my_page.url | relative_url }}" >{{ my_page.navtitle | default: my_page.title | escape }}</a>
+  {% assign sorted_pages = site.pages | sort: "position" %}
+  {% for _page in sorted_pages %}
+  {% if _page.navbar_title or _page.navtitle or _page.navlevel == "header" or _page.navbar %}
+  <a class="page-link" href="{{ _page.url | relative_url }}" >{{ _page.navbar_title | default: _page.navtitle | default: _page.title | escape }}</a>
+  {% endif %}
   {% endfor %}
 </nav>
