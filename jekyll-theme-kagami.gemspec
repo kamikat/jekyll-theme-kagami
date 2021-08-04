@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-kagami"
-  spec.version       = "0.1.12"
+  spec.version       = "0.2.0"
   spec.authors       = ["kamikat"]
   spec.email         = ["kamikat@banana.moe"]
 
