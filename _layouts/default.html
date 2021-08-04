@@ -9,7 +9,9 @@ layout: blank
       {{ content }}
     </div>
     {% include retina-image.html %}
+    {% if site.mermaid or page.mermaid %}
     {% include mermaid.html %}
+    {% endif %}
   </main>
 
   {% include footer.html %}
