@@ -1,16 +1,16 @@
-@mixin exdent-horizontally($size) {
+@mixin exdent-horizontally($size, $selector: "*") {
   margin-left: -$size;
   margin-right: -$size;
-  & > * {
+  & > #{$selector} {
     padding-left: $size;
     padding-right: $size;
   }
 }
 
-@mixin exdent-vertically($size) {
+@mixin exdent-vertically($size, $selector: "*") {
   margin-top: -$size;
   margin-bottom: -$size;
-  & > * {
+  & > #{$selector} {
     padding-top: $size;
     padding-bottom: $size;
   }

@@ -96,8 +96,6 @@ article {
     color: lighten($content-color, 20%);
     background: $block-code-background;
     code {
-      margin: 0;
-      padding: 0;
       color: inherit;
       background: none;
       line-height: 1.6;

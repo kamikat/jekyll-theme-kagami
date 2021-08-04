@@ -50,7 +50,7 @@ article {
     vertical-align: middle;
   }
 
-  .highlight {
+  pre {
     position: relative;
     overflow: hidden;
 
@@ -59,11 +59,11 @@ article {
       overflow-x: auto;
     }
 
-    @include exdent-horizontally($hspacing);
-    @include exdent-vertically(0.5 * $vspacing);
+    @include exdent-horizontally($hspacing, "code");
+    @include exdent-vertically(0.5 * $vspacing, "code");
 
     @media screen and (min-width: $content-width) {
-      @include exdent-horizontally(2 * $hspacing);
+      @include exdent-horizontally(2 * $hspacing, "code");
     }
   }
 
