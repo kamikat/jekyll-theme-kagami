@@ -14,7 +14,6 @@ instagram_username: kamikat_bot
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-kagami
 exclude:
   - Gemfile
   - Gemfile.lock
