@@ -5,22 +5,22 @@ layout: default
 {% include header.html %}
 
 <ul class="post-list">
-  {% for topic in site.data.topics %}
+  {% for recent_item in site.data.recent %}
 
     {% assign posts = site.posts %}
-    {% assign posts = posts | where_exp: "post", "post.topic == topic.id "%}
+    {% assign posts = posts | where_exp: "post", "post.categories contains recent_item.id "%}
     {% if posts %}
-      {% if posts.size > topic.size %}
-        {% assign posts = posts | slice: 0, topic.size %}
+      {% if posts.size > recent_item.size %}
+        {% assign posts = posts | slice: 0, recent_item.size %}
       {% endif %}
     {% endif %}
 
     {% if posts and posts.size > 0 %}
-      {% if topic != site.data.topics[0] %}
+      {% if recent_item != site.data.recent[0] %}
       <div class="post-list-delimiter"></div>
       {% endif %}
-      <li class="post-list-group-header" data-tags="{{ topic.name }}">
-        <a href="{{ topic.id | url_encode | prepend: "/topic/" | relative_url }}">—— {{ topic.name }} ——</a>
+      <li class="post-list-group-header" data-tags="{{ recent_item.name }}">
+        <a href="{{ recent_item.id | url_encode | prepend: "/category/" | relative_url }}">—— {{ recent_item.name }} ——</a>
       </li>
       {% for post in posts %}
       {% include post-list-item.html %}
