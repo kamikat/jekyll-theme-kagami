@@ -1,0 +1,49 @@
+$light: "theme-light";
+$dark: "theme-dark";
+
+$content-color: "content-color";
+$background-color: "background-color";
+$border-color: "border-color";
+$inline-code-color: "inline-code-color";
+$inline-code-background: "inline-code-background";
+$block-code-background: "block-code-background";
+$mark-background: "mark-background";
+
+$themes: (
+    $light: (
+        $content-color: #3c3c3c,
+        $background-color: #fff,
+        $border-color: #f0f0f0,
+        $inline-code-color: #3c3c3c,
+        $inline-code-background: #f5f5f5,
+        $block-code-background: #f2f2fa,
+        $mark-background: rgba(yellow, 0.35),
+    ),
+    $dark: (
+        $content-color: #fff,
+        $background-color: #212121,
+        $border-color: #b2b2b2,
+        $inline-code-color: #cccccc,
+        $inline-code-background: #424242,
+        $block-code-background: #303030,
+        $mark-background: rgba(yellow, 0.35),
+    )
+);
+
+$theme-group: null;
+
+@mixin theme-scope() {
+    $theme-group: map-get($themes, $light) !global;
+    @content;
+    $theme-group: null !global;
+
+    @media (prefers-color-scheme: dark) {
+        $theme-group: map-get($themes, $dark) !global;
+        @content;
+        $theme-group: null !global;
+    }
+}
+
+@function theme-get($key) {
+    @return map-get($theme-group, $key);
+}

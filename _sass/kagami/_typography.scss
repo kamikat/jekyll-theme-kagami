@@ -4,7 +4,10 @@
 [lang^="ja"]      { line-height: 1.8; @include font-serif-ja; }
 
 body {
-  color: $content-color;
+  @include theme-scope {
+    color: theme-get(content-color);
+    background-color: theme-get(background-color);
+  }
   font-size: font-size();
   font-weight: 300;
   font-kerning: normal;
@@ -87,14 +90,18 @@ article {
     margin: 0 -0.05em;
     font-size: 0.875em;
     @include font-monospace;
-    color: $inline-code-color;
-    background: $inline-code-background;
+    @include theme-scope {
+      color: theme-get(inline-code-color);
+      background: theme-get(inline-code-background);
+    }
     border-radius: 3px;
   }
 
   pre {
-    color: lighten($content-color, 20%);
-    background: $block-code-background;
+    @include theme-scope {
+      color: lighten(theme-get(content-color), 20%);
+      background: theme-get(block-code-background);
+    }
     code {
       margin: 0;
       padding: 0;
@@ -106,12 +113,16 @@ article {
 
   mark {
     color: inherit;
-    background: $mark-background;
+    @include theme-scope {
+      background: theme-get(mark-background);
+    }
   }
 
   hr {
     border: none;
-    border-bottom: 1px solid $border-color;
+    @include theme-scope {
+      border-bottom: 1px solid theme-get(border-color);
+    }
     width: 30%;
   }
 }
@@ -136,9 +147,11 @@ article {
 }
 
 .site-nav:hover {
-  color: lighten($content-color, 50%);
-  .page-link:hover {
-    color: $content-color;
+  @include theme-scope {
+    color: lighten(theme-get(content-color), 50%);
+    .page-link:hover {
+      color: theme-get(content-color);
+    }
   }
 }
 
@@ -169,7 +182,9 @@ article {
 }
 
 .post-footer {
-  color: lighten($content-color, 50%);
+  @include theme-scope {
+    color: lighten(theme-get(content-color), 50%);
+  }
   font-size: 0.875em;
   @include scut-clearfix;
 
@@ -181,12 +196,19 @@ article {
     @include scut-list-punctuated(" / ");
     .tag-link {
       transition: color 0.2s ease-out;
-      &:hover { color: lighten($content-color, 20%); }
+      &:hover {
+        @include theme-scope {
+          color: lighten(theme-get(content-color), 20%);
+        }
+      }
     }
   }
 }
 
 .social-link {
+  a:link {
+    color: blue;
+  }
   $size: 2em;
   display: inline-block;
   width: $size;
@@ -203,8 +225,10 @@ article {
   &.social-rss { color: #f26522; }
 }
 
-.credits {
-  color: lighten($content-color, 50%);
+.footer-info {
+  @include theme-scope {
+    color: lighten(theme-get(content-color), 50%);
+  }
   font-size: 0.68em;
 }
 
@@ -222,7 +246,9 @@ article {
 
 .post-item-meta {
   font-variant-caps: all-petite-caps;
-  color: lighten($content-color, 40%);
+  @include theme-scope {
+    color: lighten(theme-get(content-color), 40%);
+  }
 }
 
 .post-list-item .post-item-cover {

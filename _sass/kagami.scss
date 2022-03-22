@@ -6,15 +6,7 @@ $font-size: 18px;
 $content-width: 680px;
 $spacing-unit: 32px;
 
-// Colors
-$content-color: #3c3c3c;
-$background-color: #fff;
-$border-color: #f0f0f0;
-$inline-code-color: #d32f2f;
-$inline-code-background: #fff6f6;
-$block-code-background: #f2f2fa;
-$mark-background: rgba(yellow, 0.35);
-
+@import "kagami/theme";
 @import "kagami/scut";
 @import "kagami/reset";
 @import "kagami/utility";
